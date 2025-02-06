@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Quieres ser mi San Valentín?</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/9/9b/Disney_Castle.png') no-repeat center top, linear-gradient(135deg, #b0d4ff, #fff0f6);
+      background-size: contain, cover;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      margin-top: 50px;
+      font-size: 2.5em;
+      color: #003366;
+      text-shadow: 2px 2px #fff;
+    }
+    p {
+      font-size: 1.2em;
+      color: #003366;
+      text-shadow: 1px 1px #fff;
+    }
+    .buttons {
+      margin-top: 50px;
+      position: relative;
+    }
+    .btn {
+      font-size: 1.5em;
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+    .btn-yes {
+      background-color: #f4a261;
+      color: #fff;
+    }
+    .btn-yes:hover {
+      background-color: #e76f51;
+    }
+    .btn-no {
+      background-color: #ccc;
+      color: #333;
+      position: absolute;
+    }
+    #decorations {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+    }
+    .decoration {
+      width: 100px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hola María Fernanda, tengo algo que preguntarte...</h1>
+  <p>¿Quieres tener el privilegio de ser mi San Valentín? (No puedes rechazar esta oportunidad de oro, es como ganarte la tinka)</p>
+  
+  <div class="buttons">
+    <button class="btn btn-yes" onclick="sayYes()">Sí, claro que sí 💕</button>
+    <button class="btn btn-no" id="noButton">No ❌</button>
+  </div>
+
+  <!-- Decoraciones de princesa -->
+  <div id="decorations">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Glass_slipper_Cinderella.png" alt="Zapatilla de cristal" class="decoration">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/FairyTale_Carriage.png" alt="Carroza" class="decoration">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Crown_clipart.svg" alt="Corona" class="decoration">
+  </div>
+
+  <script>
+    const noButton = document.getElementById('noButton');
+
+    // Hacer que el botón "No" se mueva
+    noButton.addEventListener('mouseover', () => {
+      const x = Math.random() * window.innerWidth * 0.8;
+      const y = Math.random() * window.innerHeight * 0.6;
+      noButton.style.transform = translate(${x}px, ${y}px);
+    });
+
+    // Mensaje al hacer clic en "Sí"
+    function sayYes() {
+      document.body.innerHTML = `
+        <h1>¡Gracias, María Fernanda! 💖</h1>
+        <p>Sabía que dirías que sí, eres la mejor. Feliz San Valentín 🥰</p>
+        <div style="margin-top: 50px;">
+          <img src="https://media.giphy.com/media/3o6ZsYm5P38NvThJ3O/giphy.gif" alt="Corazones" style="max-width: 100%; height: auto;">
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>
